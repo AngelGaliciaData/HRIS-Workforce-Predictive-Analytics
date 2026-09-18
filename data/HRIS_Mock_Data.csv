@@ -1,0 +1,6 @@
+Employee_ID,Department_Code,Tenure_Months,Performance_Rating,Compa_Ratio,Separation_Type,Employment_Status,Corporate_Email
+EMP-1001,HR-001,14,4,0.82,Voluntary,Terminated,emp1001@company.com
+EMP-1002,IT-002,36,5,1.05,None,Active,emp1002@company.com
+EMP-1003,FIN-003,8,2,0.78,Voluntary,Terminated,emp1003@company.com
+EMP-1004,IT-002,22,3,0.92,None,Active,emp1004@company.com
+EMP-1005,HR-001,48,4,1.10,None,Active,emp1005@company.com
