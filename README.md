@@ -45,6 +45,6 @@ HRIS-Workforce-Predictive-Analytics/
 ---
 
 ## Author & Governance
-**Jesús Galicia**  
+**Ángel Galicia**  
 *HRIS Operations, Data Governance & People Analytics Specialist*  
 [GitHub Profile](https://github.com/JgaliciaH) | [LinkedIn](https://linkedin.com)
