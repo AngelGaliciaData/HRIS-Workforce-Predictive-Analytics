@@ -1,0 +1,10 @@
+# Archivos temporales y de caché de Power BI
+*.tmp
+*.zip
+*.log
+
+# Archivos de respaldo de auto-recuperación
+AutoRecovery save of *
+
+# Datos sensibles o locales no publicados
+*.pbix.lock

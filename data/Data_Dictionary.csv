@@ -1,0 +1,8 @@
+Field_Name,Data_Type,Source_System,Governance_Rule,Description
+Employee_ID,Text,SAP_HCM,Primary Key / Non-Null,Unique identifier for active and historical workforce headcounts.
+Hire_Date,Date,SAP_HCM,ISO-8601 Format,Official onboarding timestamp for tenure calculation algorithms.
+Termination_Date,Date,SAP_HCM,Nullable / Conditional,Offboarding timestamp used for frictional turnover metrics.
+Department_Code,Text,Employee_Central,FK Validation,Organizational unit mapping for cost center aggregation.
+Monthly_Base_Salary,Currency,SAP_HCM,Encrypted / Audit,Base compensation utilized for flight-risk impact calculations.
+Performance_Rating,Integer,SuccessFactors,Range [1-5],Annual performance score driving potential-to-pay ratios.
+Flight_Risk_Score,Decimal,Calculated_DAX,Range [0.0 - 1.0],Predictive index evaluating tenure thresholds and mobility metrics.

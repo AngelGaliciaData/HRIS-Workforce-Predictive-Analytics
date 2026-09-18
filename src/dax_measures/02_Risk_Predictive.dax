@@ -1,0 +1,21 @@
+// ================================================
+// PREDICTIVE FLIGHT-RISK MODELING
+// ================================================
+
+// Early-Flight Risk Index (0.0 to 1.0)
+[Flight_Risk_Index] := 
+VAR TenureMonths = SELECTEDVALUE(Fact_Employee_Snapshot[Tenure_Months], 0)
+VAR PerfRating = SELECTEDVALUE(Fact_Employee_Snapshot[Performance_Rating], 3)
+VAR CompaRatio = SELECTEDVALUE(Fact_Employee_Snapshot[Compa_Ratio], 1.0)
+
+// Weight Matrix: Critical window (6-18 months) + High Performance + Low Pay Ratio
+VAR TenureScore = IF(TenureMonths >= 6 && TenureMonths <= 18, 0.40, 0.10)
+VAR PerfScore = IF(PerfRating >= 4, 0.35, 0.15)
+VAR PayScore = IF(CompaRatio < 0.85, 0.25, 0.05)
+
+RETURN
+    IF(
+        [Active_HC] = 1,
+        TenureScore + PerfScore + PayScore,
+        BLANK()
+    )

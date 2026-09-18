@@ -1,0 +1,26 @@
+// ================================================
+// HRIS BASE METRICS & HEADCOUNT DYNAMICS
+// ================================================
+
+// 1. Active Headcount
+[Active_HC] := 
+CALCULATE(
+    COUNTROWS(Fact_Employee_Snapshot),
+    Fact_Employee_Snapshot[Employment_Status] = "Active"
+)
+
+// 2. Frictional Turnover Rate (%)
+[Frictional_Turnover_Rate] := 
+VAR VoluntaryTerminations = 
+    CALCULATE(
+        COUNTROWS(Fact_Employee_Snapshot),
+        Fact_Employee_Snapshot[Separation_Type] = "Voluntary",
+        Fact_Employee_Snapshot[Employment_Status] = "Terminated"
+    )
+VAR AverageHC = 
+    AVERAGEX(
+        VALUES(Dim_Calendar[YearMonth]),
+        [Active_HC]
+    )
+RETURN
+    DIVIDE(VoluntaryTerminations, AverageHC, 0)
