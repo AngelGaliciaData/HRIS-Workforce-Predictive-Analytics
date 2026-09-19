@@ -1,10 +1,14 @@
-# Archivos temporales y de caché de Power BI
-*.tmp
-*.zip
-*.log
+# Power BI Cache & Temporary Files
+*.pbix
+*.pbit
+*.VirtualMemoryFile
 
-# Archivos de respaldo de auto-recuperación
-AutoRecovery save of *
+# Excel & Temporary Data Dumps
+*.xlsx
+*.csv
+!data/Data_Dictionary.csv
 
-# Datos sensibles o locales no publicados
-*.pbix.lock
+# OS & Editor Metadata
+.DS_Store
+Thumbs.db
+.vscode/
