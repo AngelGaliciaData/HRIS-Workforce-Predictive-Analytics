@@ -1,0 +1,24 @@
+// ================================================
+// FINANCIAL COMPA-RATIO & PERFORMANCE MATRIX
+// ================================================
+
+// 1. Employee Compa-Ratio Status (Market Equity Check)
+[Compa_Ratio_Position] := 
+VAR CurrentCR = AVERAGE(Fact_Employee_Snapshot[Compa_Ratio])
+RETURN
+    SWITCH(
+        TRUE(),
+        CurrentCR < 0.80, "Below Market (<80%)",
+        CurrentCR >= 0.80 && CurrentCR <= 1.20, "In Market Range (80-120%)",
+        CurrentCR > 1.20, "Above Market (>120%)",
+        "Unassigned"
+    )
+
+// 2. Flight Risk High Performers (Critical Retention Metric)
+[High_Performer_Flight_Risk_Count] := 
+CALCULATE(
+    COUNTROWS(Fact_Employee_Snapshot),
+    Fact_Employee_Snapshot[Performance_Rating] >= 4,
+    Fact_Employee_Snapshot[Compa_Ratio] < 0.85,
+    Fact_Employee_Snapshot[Employment_Status] = "Active"
+)
