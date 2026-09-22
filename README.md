@@ -19,22 +19,53 @@ The architecture tackles structural attrition risks, HC variance tracking, and p
 ```text
 HRIS-Workforce-Predictive-Analytics/
 ├── data/
-│   └── Data_Dictionary.csv             # Standardized HRIS Data Catalog & Metadata Definitions
+│   ├── Data_Dictionary.csv            # Standardized HRIS Data Catalog & Metadata Definitions
 ├── docs/
-│   └── Architecture_Blueprint.md       # Data Lineage, Security & RACI Governance Matrix
+│   └── Architecture_Blueprint.md      # Data Lineage, Security & RACI Governance Matrix
 ├── src/
 │   ├── powerquery_m/
-│   │   ├── ETL_Employee_Master.m       # M-Code: Data Hygiene, Deduplication & Type Casting
-│   │   └── ETL_Dim_Tables.m            # M-Code: Dynamic Calendar & Org Hierarchy Dimensions
-│   └── dax_measures/
-│       ├── 01_Base_Metrics.dax         # Active HC, Frictional Turnover & FTE Ratios
-│       ├── 02_Risk_Predictive.dax      # Early-Flight Risk Index & Tenure Vulnerability
-│       └── 03_Governance_Metadata.dax  # Data Quality Metrics & Row-Level Audit Flags
-├── .gitignore                          # BI Cache & PBIX Exclusion Policy
-├── LICENSE                             # MIT Open Source License
-└── README.md                        # Master Project Documentation
+│   │   ├── ETL_Employee_Master.m      # M-Code: Data Hygiene, Deduplication & Type Casting
+│   │   └── ETL_Dim_Tables.m           # M-Code: Dynamic Calendar & Org Hierarchy Dimensions
+│   ├── dax_measures/
+│   │   ├── 01_Base_Metrics.dax        # Active HC, Frictional Turnover & FTE Ratios
+│   │   ├── 02_Risk_Predictive.dax     # Early-Flight Risk Index & Tenure Vulnerability
+│   │   ├── 03_Governance_Metadata.dax # Data Quality Metrics & Row-Level Audit Flags
+│   │   └── 04_Financial_Performance_Matrix.dax # High-Performer Risk & Pay Parity Matrix
+│   └── rls/
+│       └── Row_Level_Security_Roles.dax # Dynamic Row-Level Security Rules (USERPRINCIPALNAME)
+├── .gitignore                         # BI Cache & PBIX Exclusion Policy
+├── LICENSE                            # MIT Open Source License
+└── README.md                          # Master Project Documentation
 
 ```
+
+---
+
+// ==========================================
+// ROLE 1: HR Business Partner (HRBP)
+// Restringe la visibilidad al Departamento asignado al HRBP
+// ==========================================
+[Department_Code] = LOOKUPVALUE(
+    User_Security[Department_Code],
+    User_Security[UserPrincipalName],
+    USERPRINCIPALNAME()
+)
+
+// ==========================================
+// ROLE 2: Regional Director
+// Restringe la vista por País / Región Geográfica
+// ==========================================
+[Country_Code] = LOOKUPVALUE(
+    User_Security[Country_Code],
+    User_Security[UserPrincipalName],
+    USERPRINCIPALNAME()
+)
+
+// ==========================================
+// ROLE 3: C-Suite / Executive (Full Access)
+// Sin filtro DAX aplicado (acceso global a toda la organización)
+// ==========================================
+
 ---
 ## Core HRIS Engine Capabilities
 
