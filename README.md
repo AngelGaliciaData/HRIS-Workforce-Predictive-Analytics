@@ -40,9 +40,10 @@ HRIS-Workforce-Predictive-Analytics/
 ---
 ## Security & Governance Architecture (RLS)
 
+```
 // =================================================================
 // ROLE 1: HR Business Partner (HRBP)
-// Restringe la visibilidad al Departamento asignado al HRBP
+// Restricts data visibility to the HRBP's assigned Department
 // =================================================================
 [Department_Code] = LOOKUPVALUE(
     User_Security[Department_Code],
@@ -52,7 +53,7 @@ HRIS-Workforce-Predictive-Analytics/
 
 // =================================================================
 // ROLE 2: Regional Director
-// Restringe la vista por País / Región Geográfica
+// Restricts data visibility by Country / Geographical Region
 // =================================================================
 [Country_Code] = LOOKUPVALUE(
     User_Security[Country_Code],
@@ -62,10 +63,11 @@ HRIS-Workforce-Predictive-Analytics/
 
 // =================================================================
 // ROLE 3: C-Suite / Executive (Full Access)
-// Sin filtro DAX aplicado (acceso global a toda la organización)
+// No DAX filter applied (Unrestricted global access across the org)
 // =================================================================
-
 ---
+
+```
 ## Core HRIS Engine Capabilities
 
 * **Data Governance & Hygiene:** Native M-Code pipelines handling null imputation, structural key validation, and historical snapshotting.
