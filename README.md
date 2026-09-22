@@ -35,35 +35,35 @@ HRIS-Workforce-Predictive-Analytics/
 ├── .gitignore                              # BI Cache & PBIX Exclusion Policy
 ├── LICENSE                                 # MIT Open Source License
 └── README.md                               # Master Project Documentation
-
 ```
 
 ---
+## Security & Governance Architecture (RLS)
 
-// ==========================================
+// =================================================================
 // ROLE 1: HR Business Partner (HRBP)
 // Restringe la visibilidad al Departamento asignado al HRBP
-// ==========================================
+// =================================================================
 [Department_Code] = LOOKUPVALUE(
     User_Security[Department_Code],
     User_Security[UserPrincipalName],
     USERPRINCIPALNAME()
 )
 
-// ==========================================
+// =================================================================
 // ROLE 2: Regional Director
 // Restringe la vista por País / Región Geográfica
-// ==========================================
+// =================================================================
 [Country_Code] = LOOKUPVALUE(
     User_Security[Country_Code],
     User_Security[UserPrincipalName],
     USERPRINCIPALNAME()
 )
 
-// ==========================================
+// =================================================================
 // ROLE 3: C-Suite / Executive (Full Access)
 // Sin filtro DAX aplicado (acceso global a toda la organización)
-// ==========================================
+// =================================================================
 
 ---
 ## Core HRIS Engine Capabilities
