@@ -38,7 +38,6 @@ HRIS-Workforce-Predictive-Analytics/
 ├── .gitignore                              # BI Cache & PBIX Exclusion Policy
 ├── LICENSE                                 # MIT Open Source License
 └── README.md                               # Master Project Documentation
-
 ```
 
 ---
@@ -69,7 +68,6 @@ HRIS-Workforce-Predictive-Analytics/
 // ROLE 3: C-Suite / Executive (Full Access)
 // No DAX filter applied (Unrestricted global access across the org)
 // =================================================================
----
 ```
 
 ---
@@ -83,7 +81,7 @@ While this framework contains a fully functional local Power BI & M-Code engine,
            ▼ (Azure Data Factory)
 [ ADLS Gen2 Data Lake ] ──► [ Databricks Delta Lake ] ──► [ Power BI Gold Layer ]
   (Bronze: Raw Ingestion)     (Silver: PySpark Cleaning)    (Gold: Star Schema & RLS)
-```
+
 
 ```text
 📌 **Architectural Specifications & Product Backlog:**
