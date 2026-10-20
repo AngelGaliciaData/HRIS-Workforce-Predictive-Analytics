@@ -77,6 +77,7 @@ HRIS-Workforce-Predictive-Analytics/
 ## ☁️ Enterprise Cloud Target Architecture (Azure / Databricks / Power BI)
 
 While this framework contains a fully functional local Power BI & M-Code engine, it is designed to seamlessly scale into cloud-native enterprise environments:
+```
 
 ```text
 [ SAP S/4HANA / Workday ] 
@@ -100,8 +101,8 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 * **Data Governance & Hygiene:** Native M-Code pipelines handling null imputation, structural key validation, and historical snapshotting.
 * **Predictive Risk Modeling:** Custom DAX measures computing multi-factor risk scores based on tenure thresholds, performance-to-pay ratios, and historical attrition patterns.
 * **Workforce Auditability:** Built-in metadata measures designed to audit row-level integrity and source-to-target reconciliation directly within Power BI dashboards.
-
-
+```
+```
 ---
 ## Author & Governance
 **Ángel Galicia**  
