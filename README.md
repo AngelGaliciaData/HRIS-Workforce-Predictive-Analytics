@@ -78,11 +78,13 @@ While this framework contains a fully functional local Power BI & M-Code engine,
            ▼ (Azure Data Factory)
 [ ADLS Gen2 Data Lake ] ──► [ Databricks Delta Lake ] ──► [ Power BI Gold Layer ]
   (Bronze: Raw Ingestion)     (Silver: PySpark Cleaning)    (Gold: Star Schema & RLS)
+
+
 📌 Architectural Specifications & Product Backlog:
 
-Technical Cloud Pipeline Specs
+* **Technical Cloud Pipeline Specs**
 
-Product Owner Agile Backlog (User Stories)
+* **Product Owner Agile Backlog (User Stories)**
 
 ```
 ---
