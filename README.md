@@ -84,14 +84,15 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 [ ADLS Gen2 Data Lake ] ──► [ Databricks Delta Lake ] ──► [ Power BI Gold Layer ]
   (Bronze: Raw Ingestion)     (Silver: PySpark Cleaning)    (Gold: Star Schema & RLS)
 
-```
 
 ```text
 📌 **Architectural Specifications & Product Backlog:**
 
 * [Technical Cloud Pipeline Specs](architecture/Cloud_Pipeline_Specs.md)
 * [Product Owner Agile Backlog (User Stories)](architecture/User_Stories_Backlog.md)
+---
 
+```
 ---
 ## Core HRIS Engine Capabilities
 
