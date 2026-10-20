@@ -12,7 +12,6 @@ This enterprise repository contains an end-to-end **HRIS Data Governance & Predi
 The architecture tackles structural attrition risks, HC variance tracking, and predictive flight-risk modeling by enforcing strict ETL data quality protocols, star-schema data modeling, and robust DAX logic aligned with ISO 30414 human capital reporting guidelines.
 
 ---
-
 ## Technical Architecture
 
 ```text
@@ -66,8 +65,27 @@ HRIS-Workforce-Predictive-Analytics/
 // No DAX filter applied (Unrestricted global access across the org)
 // =================================================================
 ---
+```
+
+---
+## ☁️ Enterprise Cloud Target Architecture (Azure / Databricks / Power BI)
+
+While this framework contains a fully functional local Power BI & M-Code engine, it is designed to seamlessly scale into cloud-native enterprise environments:
+
+```text
+[ SAP S/4HANA / Workday ] 
+           │
+           ▼ (Azure Data Factory)
+[ ADLS Gen2 Data Lake ] ──► [ Databricks Delta Lake ] ──► [ Power BI Gold Layer ]
+  (Bronze: Raw Ingestion)     (Silver: PySpark Cleaning)    (Gold: Star Schema & RLS)
+📌 Architectural Specifications & Product Backlog:
+
+Technical Cloud Pipeline Specs
+
+Product Owner Agile Backlog (User Stories)
 
 ```
+---
 ## Core HRIS Engine Capabilities
 
 * **Data Governance & Hygiene:** Native M-Code pipelines handling null imputation, structural key validation, and historical snapshotting.
