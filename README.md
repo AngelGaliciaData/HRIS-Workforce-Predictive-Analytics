@@ -93,6 +93,7 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 ```
 ```
 ---
+---
 ## Core HRIS Engine Capabilities
 
 * **Data Governance & Hygiene:** Native M-Code pipelines handling null imputation, structural key validation, and historical snapshotting.
