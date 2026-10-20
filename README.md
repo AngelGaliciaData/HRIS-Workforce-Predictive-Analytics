@@ -82,9 +82,9 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 
 📌 Architectural Specifications & Product Backlog:
 
-* **Technical Cloud Pipeline Specs**
+* Technical Cloud Pipeline Specs**
 
-* **Product Owner Agile Backlog (User Stories)**
+* Product Owner Agile Backlog (User Stories)**
 
 ```
 ---
