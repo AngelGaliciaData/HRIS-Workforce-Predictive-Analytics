@@ -83,14 +83,14 @@ While this framework contains a fully functional local Power BI & M-Code engine,
            ▼ (Azure Data Factory)
 [ ADLS Gen2 Data Lake ] ──► [ Databricks Delta Lake ] ──► [ Power BI Gold Layer ]
   (Bronze: Raw Ingestion)     (Silver: PySpark Cleaning)    (Gold: Star Schema & RLS)
-
+```
 
 ```text
 📌 **Architectural Specifications & Product Backlog:**
 
 * [Technical Cloud Pipeline Specs](architecture/Cloud_Pipeline_Specs.md)
 * [Product Owner Agile Backlog (User Stories)](architecture/User_Stories_Backlog.md)
----
+
 
 ```
 ---
@@ -100,8 +100,8 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 * **Predictive Risk Modeling:** Custom DAX measures computing multi-factor risk scores based on tenure thresholds, performance-to-pay ratios, and historical attrition patterns.
 * **Workforce Auditability:** Built-in metadata measures designed to audit row-level integrity and source-to-target reconciliation directly within Power BI dashboards.
 
----
 
+---
 ## Author & Governance
 **Ángel Galicia**  
 *HRIS Operations, Data Governance & People Analytics Specialist*  
