@@ -72,7 +72,6 @@ HRIS-Workforce-Predictive-Analytics/
 ---
 ```
 
-```markdown
 ---
 ## ☁️ Enterprise Cloud Target Architecture (Azure / Databricks / Power BI)
 
@@ -92,7 +91,7 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 
 * [Technical Cloud Pipeline Specs](architecture/Cloud_Pipeline_Specs.md)
 * [Product Owner Agile Backlog (User Stories)](architecture/User_Stories_Backlog.md)
-```
+
 ---
 ## Core HRIS Engine Capabilities
 
