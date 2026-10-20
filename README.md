@@ -16,8 +16,12 @@ The architecture tackles structural attrition risks, HC variance tracking, and p
 
 ```text
 HRIS-Workforce-Predictive-Analytics/
+├── architecture/
+│   ├── Cloud_Pipeline_Specs.md             # Target Azure/Databricks Medallion Architecture
+│   └── User_Stories_Backlog.md             # Data Product Agile Backlog (Jira User Stories)
 ├── data/
 │   ├── Data_Dictionary.csv                 # Standardized HRIS Data Catalog & Metadata Definitions
+│   └── HR_Simulated_Dataset.csv            # 3,000-Row Operational HRIS Dataset
 ├── docs/
 │   └── Architecture_Blueprint.md           # Data Lineage, Security & RACI Governance Matrix
 ├── src/
@@ -34,6 +38,7 @@ HRIS-Workforce-Predictive-Analytics/
 ├── .gitignore                              # BI Cache & PBIX Exclusion Policy
 ├── LICENSE                                 # MIT Open Source License
 └── README.md                               # Master Project Documentation
+
 ```
 
 ---
