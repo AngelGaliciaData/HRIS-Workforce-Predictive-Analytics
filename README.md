@@ -85,14 +85,13 @@ While this framework contains a fully functional local Power BI & M-Code engine,
   (Bronze: Raw Ingestion)     (Silver: PySpark Cleaning)    (Gold: Star Schema & RLS)
 
 ```
-📌 **Architectural Specifications & Product Backlog:**
+📌 Architectural Specifications & Product Backlog:
 
-* [Technical Cloud Pipeline Specs](architecture/Cloud_Pipeline_Specs.md)
-* [Product Owner Agile Backlog (User Stories)](architecture/User_Stories_Backlog.md)
+📄 Technical Cloud Pipeline Specs
 
-```
-```
----
+📋 Product Owner Agile Backlog (User Stories)
+
+
 ---
 ## Core HRIS Engine Capabilities
 
