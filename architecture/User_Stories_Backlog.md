@@ -1,9 +1,4 @@
-#### 
-
----
-
-```markdown
-# 📄 📋 Enterprise Data Product Backlog (Jira User Stories)
+# 📋 Enterprise Data Product Backlog (Jira User Stories)
 
 ## Epic 1: HRIS Cloud Data Ingestion & Governance Engine
 
