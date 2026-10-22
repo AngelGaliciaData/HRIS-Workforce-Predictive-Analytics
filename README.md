@@ -33,8 +33,11 @@ HRIS-Workforce-Predictive-Analytics/
 │   │   ├── 02_Risk_Predictive.dax          # Early-Flight Risk Index & Tenure Vulnerability
 │   │   ├── 03_Governance_Metadata.dax      # Data Quality Metrics & Row-Level Audit Flags
 │   │   └── 04_Financial_Performance_Matrix.dax # High-Performer Risk & Pay Parity Matrix
-│   └── rls/
-│       └── Row_Level_Security_Roles.dax    # Dynamic Row-Level Security Rules (USERPRINCIPALNAME)
+│   ├── rls/
+│   │   └── Row_Level_Security_Roles.dax    # Dynamic Row-Level Security Rules (USERPRINCIPALNAME)
+│   └── sql/
+│       ├── 01_HRIS_Core_Data_Extraction.sql  # SQL: Active Headcount & $6M Attrition Risk Modeling
+│       └── 02_Workday_Pipeline_Debugging_CTE.sql # SQL: Window Functions & Data Quality Audit
 ├── .gitignore                              # BI Cache & PBIX Exclusion Policy
 ├── LICENSE                                 # MIT Open Source License
 └── README.md                               # Master Project Documentation
