@@ -92,6 +92,30 @@ While this framework contains a fully functional local Power BI & M-Code engine,
 * [Technical Cloud Pipeline Specs](architecture/Cloud_Pipeline_Specs.md)
 * [Product Owner Agile Backlog (User Stories)](architecture/User_Stories_Backlog.md)
 
+---
+
+## 🗄️ Relational SQL Engine & Data Quality Audit (Workday / SAP Staging)
+
+To ensure total data parity and bridge relational database extractions with executive BI models, this framework embeds native ANSI SQL scripts for high-volume delta loads:
+
+```sql
+-- Workday Delta Load Debugging & Deduplication via Window Functions
+WITH RankedWorkdayIngestion AS (
+    SELECT EmpID, ADEmail, DepartmentCode, LastModifiedDate,
+           ROW_NUMBER() OVER (PARTITION BY EmpID ORDER BY LastModifiedDate DESC) AS RowNum
+    FROM staging.Workday_Daily_Delta_Extract
+)
+SELECT * FROM RankedWorkdayIngestion WHERE RowNum = 1;
+
+```
+
+
+📌 Functional SQL Modules:
+
+📄 [01_HRIS_Core_Data_Extraction.sql — Active Headcount & $6M Attrition Risk Modeling.](01_HRIS_Core_Data_Extraction.sql)
+
+
+📄 [02_Workday_Pipeline_Debugging_CTE.sql — Window Functions (ROW_NUMBER) & Data Quality Audit.](src\sql\02_Workday_Pipeline_Debugging_CTE.sql)
 
 ---
 ## Core HRIS Engine Capabilities
