@@ -112,10 +112,9 @@ SELECT * FROM RankedWorkdayIngestion WHERE RowNum = 1;
 
 📌 Functional SQL Modules:
 
-📄 [01_HRIS_Core_Data_Extraction.sql — Active Headcount & $6M Attrition Risk Modeling.](src\sql\01_HRIS_Core_Data_Extraction.sql)
+* 📄 [01_HRIS_Core_Data_Extraction.sql](src\sql\01_HRIS_Core_Data_Extraction.sql)
+* 📄 [02_Workday_Pipeline_Debugging_CTE.sql](src\sql\02_Workday_Pipeline_Debugging_CTE.sql)
 
-
-📄 [02_Workday_Pipeline_Debugging_CTE.sql — Window Functions (ROW_NUMBER) & Data Quality Audit.](src\sql\02_Workday_Pipeline_Debugging_CTE.sql)
 
 ---
 ## Core HRIS Engine Capabilities
