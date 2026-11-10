@@ -1,18 +1,17 @@
 # Enterprise HRIS & Predictive Workforce Analytics Framework
 
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-Data_Analysis_Expressions-blue?style=for-the-badge)
-![Power Query](https://img.shields.io/badge/Power_Query-M_Code-green?style=for-the-badge)
-![Governance](https://img.shields.io/badge/Governance-ISO_30414-purple?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Data Governance](https://img.shields.io/badge/Standards-ISO%2030414-blue)](#)
+[![Architecture](https://img.shields.io/badge/Pattern-Medallion%20(Azure%2FDatabricks)-orange)](#)
 
-## Executive Summary
-This enterprise repository contains an end-to-end **HRIS Data Governance & Predictive Analytics Framework** designed to bridge core workforce master data (SAP HCM / Employee Central) with advanced BI modeling. 
+## 🌐 Executive Summary
+Modern human capital management requires moving beyond reactive reporting toward predictive, resilient data products. This enterprise repository contains an end-to-end **HRIS Data Governance & Predictive Analytics Framework** designed to bridge core workforce master data (SAP HCM / Workday / Employee Central) with advanced BI modeling.
 
-The architecture tackles structural attrition risks, HC variance tracking, and predictive flight-risk modeling by enforcing strict ETL data quality protocols, star-schema data modeling, and robust DAX logic aligned with ISO 30414 human capital reporting guidelines.
+By bridging the gap between organizational psychology (ISO 30414 guidelines) and robust cloud data engineering, this project transforms volatile raw transactional extracts into trusted executive semantic models. It specifically addresses high-stakes organizational challenges, including proactive **High-Potential (HiPo) retention modeling**, **compensation equity analysis**, and **automated nightly delta deduplication**.
 
 ---
-## Technical Architecture
+
+## 🏛️ Technical Architecture & Repository Structure
 
 ```text
 HRIS-Workforce-Predictive-Analytics/
@@ -41,7 +40,15 @@ HRIS-Workforce-Predictive-Analytics/
 ├── .gitignore                              # BI Cache & PBIX Exclusion Policy
 ├── LICENSE                                 # MIT Open Source License
 └── README.md                               # Master Project Documentation
+
 ```
+## 🔑 Key Engineering Highlights
+
+* Automated Data Quality & Isolation Layer: Implements CTEs and ROW_NUMBER() OVER (PARTITION BY EmployeeID ORDER BY EffectiveDate DESC) to eliminate overnight pipeline delta duplications from Workday/SAP extracts without mutating raw audit trails.
+
+* ISO 30414 Human Capital Standard Alignment: Standardized metric calculation logic for Frictional Turnover, Tenure Vulnerability, and Early-Flight Risk Index.
+
+* Enterprise Governance & RLS: Dynamic Row-Level Security via DAX utilizing USERPRINCIPALNAME() mapped against organizational permissions for cross-regional data compliance.
 
 ---
 ## Security & Governance Architecture (RLS)
